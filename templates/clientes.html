@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Listado de Clientes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Total Visitas</th>
+            <th>Última Visita</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.total_visitas }}</td>
+            <td>
+                {% if cliente.ultima_visita %}
+                    {{ cliente.ultima_visita.fecha.strftime('%d/%m/%Y') }}
+                {% else %}
+                    Sin visitas
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

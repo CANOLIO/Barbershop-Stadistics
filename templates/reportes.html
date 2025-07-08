@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="mb-4">Reportes Analíticos</h2>
+        
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card text-center bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingresos Totales</h5>
+                        <p class="card-text fs-3">${{ ingresos_totales | round(2) }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card text-center bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Clientes Únicos</h5>
+                        <p class="card-text fs-3">{{ clientes_unicos }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card text-center bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Servicio Popular</h5>
+                        <p class="card-text fs-3">{{ servicio_popular }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card text-center bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Profesional Destacado</h5>
+                        <p class="card-text fs-3">{{ profesional_popular }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h3 class="mt-4 mb-3">Historial Completo de Visitas</h3>
+        <div class="table-responsive">
+            {{ datos | safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
