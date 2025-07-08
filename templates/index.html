@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Barber Analytics{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2>Bienvenido al Sistema</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">Versión MVP - Pruebas iniciales</p>
+                
+                <div class="list-group">
+                    <a href="/registrar_visita" class="list-group-item list-group-item-action">
+                        📝 Registrar nueva visita
+                    </a>
+                    <a href="/reportes" class="list-group-item list-group-item-action">
+                        📊 Ver reportes analíticos
+                    </a>
+                    <a href="/clientes" class="list-group-item list-group-item-action">
+                        👥 Listado de clientes
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
